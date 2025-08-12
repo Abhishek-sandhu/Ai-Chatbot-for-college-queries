@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   body, html { 
+  height: 100%; 
+  margin: 0; 
+  font-family: 'Poppins', sans-serif; 
+}
+
+body::before {
+  content: ""; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: linear-gradient(135deg, #6b22ffdd 30%, #b856ffee 90% );
+  opacity: 0.65; /* Slightly lighter opacity */
+  z-index: -1;
+}
+
+.bg-illustration {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f7d0fbc5-06de-473e-9425-46c0c57b2bff.png');
+  background-size: cover; 
+  background-position: center;
+  filter: brightness(0.75); /* More light */
+  z-index: -2;
+}
+
+.custom-input {
+  background: transparent; 
+  border: none; 
+  border-bottom: 2px solid #ddd;
+  outline: none; 
+  padding: 8px 0; 
+  width: 100%; 
+  color: white; 
+  font-weight: 500;
+ 
+}
+
+.custom-input::placeholder { 
+  color: #ddd; 
+  font-weight: 400; 
+}
+
+.custom-input:focus { 
+  border-color: #fff; 
+}
+
+.link-button { 
+  color: white; 
+  font-weight: 700; 
+  cursor: pointer; 
+}
+
+.link-button:hover { 
+  text-decoration: underline; 
+}
+
+.form-container {
+  background: linear-gradient(180deg, rgba(110,41,255,0.8), rgba(160,74,190,0.9)); 
+  border: 1.5px solid rgba(255 255 255 / 0.5);
+  border-radius: 15px; 
+  padding: 2rem 2.5rem; 
+  max-width: 350px;
+  width: 90vw; 
+  color: white; 
+  font-weight: 600;
+  box-shadow: 0 12px 30px rgba(100 50 180 / 0.5);
+  backdrop-filter: blur(5px); /* Adds blur effect to enhance the form */
+}
+
+.checkbox-label { 
+  user-select: none; 
+}
+
+.btn-login {
+  background-color: white; 
+  color: #3e13b9; 
+  font-weight: 700;
+  border-radius: 9999px; 
+  padding: 0.6rem 0; 
+  width: 100%;
+  margin-top: 1.3rem; 
+  font-size: 1.1rem; 
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover { 
+  background-color: #ddd; 
+  color: #2f0267; 
+}
+
+  </style>
+</head>
+<body>
+
+<div class="bg-illustration" role="img" aria-label="Winter night illustration with snowy trees and cabin"></div>
+
+<div class="min-h-full flex items-center justify-center py-12 px-4">
+
+  <!-- Login Form -->
+  <div class="form-container" id="form-login">
+    <h1 class="text-3xl mb-7 text-center font-extrabold">Login</h1>
+
+    {% if error %}
+      <div class="bg-red-100 text-red-700 px-3 py-2 mb-4 rounded text-sm">
+        {{ error }}
+      </div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('login') }}">
+      <label for="username" class="block mb-1 text-sm">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter username"
+             class="custom-input mb-5" required />
+
+      <label for="password" class="block mb-1 text-sm">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password"
+             class="custom-input mb-5" required />
+
+      <div class="flex items-center justify-between mb-4">
+        <label class="checkbox-label flex items-center gap-2">
+          <input type="checkbox" name="remember" />
+          Remember Me
+        </label>
+        <a href="#" class="link-button text-sm font-semibold">Forget Password</a>
+      </div>
+
+      <button type="submit" class="btn-login">Log in</button>
+    </form>
+
+    <p class="mt-6 text-center text-sm font-semibold">
+      Don't have an account?
+      <button class="link-button" id="showRegister">Register</button>
+    </p>
+  </div>
+
+  <!-- Register Form -->
+  <div class="form-container hidden" id="form-register" aria-hidden="true">
+    <h1 class="text-3xl mb-7 text-center font-extrabold">Register</h1>
+
+    <form method="POST" action="{{ url_for('register') }}">
+      <label for="usernameRegister" class="block mb-1 text-sm">Username</label>
+      <input type="text" id="usernameRegister" name="username" placeholder="Enter your username" class="custom-input mb-5" required />
+
+      <label for="passwordRegister" class="block mb-1 text-sm">Password</label>
+      <input type="password" id="passwordRegister" name="password" placeholder="Create your password" class="custom-input mb-5" required />
+
+      <label for="confirmPasswordRegister" class="block mb-1 text-sm">Confirm Password</label>
+      <input type="password" id="confirmPasswordRegister" name="confirm" placeholder="Confirm your password" class="custom-input mb-5" required />
+
+      <button type="submit" class="btn-login">Register</button>
+    </form>
+
+    <p class="mt-6 text-center text-sm font-semibold">
+      Already have an account?
+      <button class="link-button" id="showLogin">Login</button>
+    </p>
+  </div>
+</div>
+
+<script>
+  const formLogin = document.getElementById('form-login');
+  const formRegister = document.getElementById('form-register');
+  const showRegisterBtn = document.getElementById('showRegister');
+  const showLoginBtn = document.getElementById('showLogin');
+
+  showRegisterBtn?.addEventListener('click', () => {
+    formLogin.classList.add('hidden');
+    formRegister.classList.remove('hidden');
+  });
+
+  showLoginBtn?.addEventListener('click', () => {
+    formRegister.classList.add('hidden');
+    formLogin.classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>  

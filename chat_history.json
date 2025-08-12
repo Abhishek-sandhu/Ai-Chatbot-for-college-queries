@@ -1,0 +1,74 @@
+[
+    {
+        "sender": "user",
+        "message": "hello"
+    },
+    {
+        "sender": "bot",
+        "message": "\ud83d\udc4b Hello! Welcome to Govt PG College Una Chatbot. How may I help you?"
+    },
+    {
+        "sender": "user",
+        "message": "re_admission"
+    },
+    {
+        "sender": "bot",
+        "message": "Students who drop out can reapply for admission subject to HPU rules and seat availability."
+    },
+    {
+        "sender": "user",
+        "message": "Hello"
+    },
+    {
+        "sender": "bot",
+        "message": "\ud83d\udc4b Hello! Welcome to Govt PG College Una Chatbot. How may I help you?"
+    },
+    {
+        "sender": "user",
+        "message": "Are you alive alien"
+    },
+    {
+        "sender": "bot",
+        "message": "UG and PG courses like BA, BCom, MSc, etc."
+    },
+    {
+        "sender": "user",
+        "message": "What is your age"
+    },
+    {
+        "sender": "bot",
+        "message": "Usually in July. Check official site."
+    },
+    {
+        "sender": "user",
+        "message": "Hello"
+    },
+    {
+        "sender": "bot",
+        "message": "\ud83d\udc4b Hello! Welcome to Govt PG College Una Chatbot. How may I help you?"
+    },
+    {
+        "sender": "user",
+        "message": "Hello"
+    },
+    {
+        "sender": "bot",
+        "message": "\ud83d\udc4b Hello! Welcome to Govt PG College Una Chatbot. How may I help you?"
+    },
+    {
+        "sender": "user",
+        "message": "What courses do you offer?"
+    },
+    {
+        "sender": "bot",
+        "message": "10th and 12th mark sheets, migration, ID proof, photographs."
+    },
+    {
+        "sender": "user",
+        "message": "Is there BCA available?"
+    },
+    {
+        "sender": "bot",
+        "message": "\ud83c\udf93 We offer BA, BCom, BSc, BCA, MA, MCom, MSc, and add-on skill courses."
+    }
+]
