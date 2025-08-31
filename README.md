@@ -92,7 +92,7 @@ Fallback: If nothing fits, it gives a generic polite reply.
 "How to apply for scholarships?"
 
 🙌 About the Developer
-Built by Abhinandan Sahore as part of a college project exploring practical applications of NLP in education.
+Built by Abhishek as part of a college project exploring practical applications of NLP in education.
 
 Tech Stack: Flask, SpaCy, Pandas, FuzzyWuzzy
 
