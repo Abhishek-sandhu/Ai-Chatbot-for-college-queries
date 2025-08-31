@@ -10,7 +10,7 @@ import requests
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
 
-HF_API_KEY = "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"  # ✅ Your HuggingFace API key
+HF_API_KEY = "YOUR_HUGGINGFACE_TOKEN_HERE"
 
 # File Paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
