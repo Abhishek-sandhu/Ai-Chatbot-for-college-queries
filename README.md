@@ -76,7 +76,7 @@ college-chatbot/
 │   └── index.html     # Chatbot frontend
 
 ```         
-###💬 How the Chatbot Works
+##💬 How the Chatbot Works
 ---
 Input: User types a question.
 
